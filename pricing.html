@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Theta Music Plans – Band Essentials</title>
+<meta name="description" content="Choose a Theta Music plan and unlock all 12 units of Band Essentials. From $9/month or $39/year.">
+<style>
+:root{
+  --text:#494949; --heading:#3a3a3a; --link:#215489; --navy:#2a5a8c;
+  --gold:#cc9900; --gold-h:#b38600; --line:#c9c9c9; --soft:#f4f4f4;
+  --green:#d9e8c7; --green-b:#a5c085; --gamebg:#c3d7e5; --gameb:#33557a;
+  --purple:#5b2a6e; --radius:8px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:15px/1.7 Verdana,Geneva,sans-serif;color:var(--text);background:#fff}
+a{color:var(--link)}
+img{max-width:100%}
+h1,h2,h3{color:var(--heading);margin:0;line-height:1.25}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.wide{max-width:960px}
+
+/* Header (matches course page) */
+.hdr{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid #ddd}
+.hdr .in{max-width:1100px;margin:0 auto;height:62px;display:flex;align-items:center;gap:12px;padding:0 20px}
+.hdr .logo img{height:38px;width:auto;display:block}
+.hdr .sp{flex:1}
+.hb{display:inline-flex;align-items:center;height:32px;padding:0 16px;border-radius:16px;font:13px Verdana,sans-serif;text-decoration:none;white-space:nowrap}
+.hb.pricing{background:var(--gold);color:#fff;border-radius:6px;font-size:15px;height:34px}
+.hb.signup{border:1px solid var(--navy);color:var(--navy)}
+.hb.login{background:var(--navy);color:#fff}
+@media (max-width:460px){.hb.signup{display:none}.hdr .logo img{height:32px}}
+
+/* Plans */
+.plans-head{text-align:center;padding:30px 0 6px}
+.plans-head h1{font-size:30px}
+.plans-head p{margin:10px 0 0}
+.toggle{display:inline-flex;margin:18px auto 0;border:1px solid var(--line);border-radius:20px;padding:3px;background:var(--soft)}
+.toggle button{border:0;background:transparent;font:13px Verdana,sans-serif;color:var(--text);padding:6px 14px;border-radius:16px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:#fff;color:var(--heading);font-weight:bold;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.toggle .save{color:var(--gold);font-weight:bold}
+
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0 0;align-items:stretch}
+.plan{border:1px solid #333;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;background:#fff;position:relative}
+.plan .bar{background:#000;color:#fff;text-align:center;font-weight:bold;padding:6px}
+.plan .body{padding:20px 18px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1}
+.price{color:var(--purple);font-weight:bold;font-size:17px}
+.price b{font-size:30px}
+.was{font-size:12px;color:#888;min-height:20px;margin-top:2px}
+.for{font-weight:bold;margin:10px 0 4px}
+.sub{font-size:13px;min-height:22px}
+.plan ul{text-align:left;font-size:12.5px;line-height:1.55;margin:12px 0 16px;padding-left:18px;align-self:stretch}
+.plan ul li{margin-bottom:4px}
+.purchase{margin-top:auto;display:inline-block;background:var(--gold);color:#fff;border:0;border-radius:6px;font:bold 17px Verdana,sans-serif;padding:11px 30px;cursor:pointer;text-decoration:none}
+.purchase:hover{background:var(--gold-h)}
+.plan.best{border:3px solid var(--gold);box-shadow:0 10px 26px -12px rgba(204,153,0,.6)}
+.plan.best .bar{background:var(--gold)}
+.plan.best{overflow:visible}
+.plan.best .bar{border-radius:5px 5px 0 0}
+.ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--purple);color:#fff;font-size:11px;font-weight:bold;padding:3px 12px;border-radius:12px;z-index:1}
+.plan.best .bar{padding-top:12px}
+.plan.picked{outline:4px solid rgba(33,84,137,.35);outline-offset:3px}
+@media (max-width:820px){.plans{grid-template-columns:1fr;max-width:420px;margin-inline:auto}.plan.best{order:-1}}
+
+.po{max-width:640px;margin:26px auto 0;text-align:center}
+.or{display:flex;align-items:center;gap:12px;color:#888;font-weight:bold;margin-bottom:14px}
+.or::before,.or::after{content:"";flex:1;border-top:1px solid #ddd}
+.pobtn{display:inline-block;border:2px solid var(--gold);color:var(--gold);border-radius:6px;padding:9px 22px;font-weight:bold;text-decoration:none}
+.pobtn:hover{background:#fff8e6}
+.po p{margin:10px 0 0;font-size:13px}
+.trustline{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;margin-top:18px;font-size:12.5px;color:#666}
+.trustline span::before{content:"\2713  ";color:#5a8f2a;font-weight:bold}
+
+/* Course box (matches course page) */
+.divider{margin:40px auto 22px;text-align:center}
+.divider h2{font-size:20px}
+.divider p{margin:4px 0 0;font-size:13px;color:#666}
+.coursebox{border:1px solid #999;border-radius:10px;background:#fff url("https://trainer.thetamusic.com/sites/kichijoji.thetamusic.com/files/images/course_box_background_intro.jpg") right center/cover no-repeat;display:grid;grid-template-columns:200px 1fr;gap:10px;padding:22px 26px;align-items:center}
+.ring{width:136px;height:136px;border-radius:50%;border:12px solid #e2e2e2;display:grid;place-items:center;text-align:center;margin:0 auto;background:#fff}
+.ring b{display:block;font-size:30px;line-height:1;color:#000}
+.ring span{font-size:14px;font-weight:bold;color:#000}
+.ctitle{display:flex;align-items:center;gap:14px}
+.ctitle img{width:68px;height:68px}
+.ctitle h2{font-size:21px}
+.skills{margin-top:12px}
+.skills h3{font-size:16px}
+.skills ul{columns:2;column-gap:24px;font-size:12.5px;line-height:1.6;margin:8px 0 0;padding-left:28px}
+@media (max-width:620px){.coursebox{grid-template-columns:1fr;padding:18px}.skills ul{columns:1}}
+.note{text-align:center;font-size:14px;margin:12px 0 0}
+.note a{font-weight:bold;text-decoration:none}
+
+.instrow{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin:26px 0 22px;flex-wrap:wrap}
+.instrow label{display:block;font-weight:bold;font-size:14px;margin-bottom:4px}
+.sel{position:relative;width:240px}
+.sel img{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:20px;height:20px;object-fit:contain;pointer-events:none}
+.sel select{appearance:none;-webkit-appearance:none;width:100%;font:14px Verdana,sans-serif;color:#222;padding:6px 28px 6px 38px;border:1px solid #aaa;border-radius:4px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0h10L5 6z' fill='%23666'/%3E%3C/svg%3E") right 10px center no-repeat}
+.unlock{background:var(--green);border:1px solid var(--green-b);border-radius:5px;color:#000;font-weight:bold;padding:14px 22px;text-decoration:none;display:inline-block}
+.unlock:hover{background:#cbe0b4}
+
+/* Units accordion */
+.unit{border:1px solid #bbb;border-radius:var(--radius);margin-bottom:22px;background:var(--soft);overflow:hidden}
+.unit>summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;align-items:center;gap:6px;font-weight:bold;color:var(--heading)}
+.unit>summary::-webkit-details-marker{display:none}
+.unit>summary .n{font-size:18px;color:var(--link)}
+.unit>summary small{font-weight:normal;font-size:12px;color:var(--link)}
+.unit>summary .chev{margin-left:auto;transition:transform .2s;color:#777}
+.unit[open]>summary .chev{transform:rotate(90deg)}
+.unit .lessons{background:#fff;border-top:1px solid #ddd;padding:16px 14px 6px}
+.lesson{border:1px solid #ddd;border-radius:6px;margin:0 auto 16px;max-width:580px;overflow:hidden}
+.lesson h4{margin:0;background:#f7f7f7;padding:8px 12px;font-size:13px;color:var(--heading);border-bottom:1px solid #e3e3e3}
+.lesson .row{padding:10px 12px;display:flex;justify-content:center}
+.ex,.gm{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:346px;border:1px solid var(--gameb);border-radius:4px;text-decoration:none;color:#000;box-shadow:1px 2px 0 var(--gameb)}
+.ex{background:#fff;padding:7px;font-size:13px}
+.ex svg{width:26px;height:26px;color:#3b87b8}
+.gm{background:var(--gamebg);padding:5px;text-align:center}
+.gm img{width:58px;height:46px;object-fit:cover;border-radius:2px}
+.gm b{display:block;font-size:14px}
+.gm span{font-size:11.5px}
+.lockrow{text-align:center;font-size:12.5px;margin:0 0 14px}
+.lockrow a{font-weight:bold;text-decoration:none}
+
+.final{text-align:center;margin:36px 0 0;padding:28px 16px;border:1px solid #ddd;border-radius:10px;background:#fffaf0}
+.final h2{font-size:20px}
+.final p{margin:6px 0 16px;font-size:14px}
+
+footer{margin-top:48px;border-top:1px solid #ddd;padding:24px 16px 96px;text-align:center;font-size:12px}
+footer a{margin:0 8px;text-decoration:none}
+
+/* Sticky plan bar */
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #ccc;box-shadow:0 -6px 18px -10px rgba(0,0,0,.35);padding:10px 16px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s}
+.sbar.show{transform:none}
+.sbar .in{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.sbar p{margin:0;font-size:13px}
+.sbar .purchase{margin:0 0 0 auto;font-size:15px;padding:9px 20px}
+@media (max-width:480px){.sbar p{display:none}.sbar .purchase{width:100%;text-align:center}}
+:focus-visible{outline:3px solid #4a90d9;outline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="in">
+    <a class="logo" href="index.html" aria-label="Back to Band Essentials"><img src="https://trainer.thetamusic.com/sites/kichijoji.thetamusic.com/themes/mobileresponsive/logo.png" alt="Theta Music"></a>
+    <span class="sp"></span>
+    <a class="hb pricing" href="#plans" aria-current="page">Pricing</a>
+    <a class="hb signup" href="https://trainer.thetamusic.com/en/user/register">Sign up</a>
+    <a class="hb login" href="https://trainer.thetamusic.com/en/user/login">Log in</a>
+  </div>
+</header>
+
+<main>
+<!-- PLANS (from /en/content/subscription), placed first -->
+<section id="plans" class="wrap wide" aria-labelledby="plans-h">
+  <div class="plans-head">
+    <h1 id="plans-h">Theta Music Plans</h1>
+    <p>Enjoy full access to all games and courses, including every unit of Band Essentials.</p>
+    <div class="toggle" role="group" aria-label="Theta Player billing">
+      <button type="button" data-bill="year" aria-pressed="true">Yearly <span class="save">save 64%</span></button>
+      <button type="button" data-bill="month" aria-pressed="false">Monthly</button>
+    </div>
+  </div>
+
+  <!-- Each Purchase submits the same fields the live subscription page posts to /en/content/payment -->
+  <div class="plans">
+    <form class="plan" id="player" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+      <div class="bar">Theta Player</div>
+      <div class="body">
+        <div class="price"><b data-player-price>$39</b> <span data-player-per>/ year</span></div>
+        <div class="was" data-player-was>vs. $108 paying monthly</div>
+        <div class="for">For individuals</div>
+        <div class="sub">Students &amp; families</div>
+        <ul>
+          <li>Full access to all games and courses</li>
+          <li>All 12 Band Essentials units</li>
+          <li>Laptop, phone or tablet. No app needed</li>
+        </ul>
+        <input type="hidden" name="membershipTypeId" value="71" data-player-id>
+        <input type="hidden" name="operation" value="none">
+        <button class="purchase" type="submit">Purchase</button>
+      </div>
+    </form>
+
+    <form class="plan best" id="studio" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+      <span class="ribbon">Best for band directors</span>
+      <div class="bar">Theta Studio</div>
+      <div class="body">
+        <div class="price"><b>$79</b> / year</div>
+        <div class="was">about $2.63 per student</div>
+        <div class="for">1 teacher, 30 students</div>
+        <div class="sub">One band or classroom</div>
+        <ul>
+          <li>Full access to all games and courses</li>
+          <li>Assign Band Essentials to your class</li>
+          <li>Track accuracy, completion, speed &amp; growth</li>
+        </ul>
+        <input type="hidden" name="membershipTypeId" value="72">
+        <input type="hidden" name="operation" value="none">
+        <input type="hidden" name="numStudents" value="30">
+        <button class="purchase" type="submit">Purchase</button>
+      </div>
+    </form>
+
+    <form class="plan" id="school" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+      <div class="bar">Theta School</div>
+      <div class="body">
+        <div class="price"><b>$199</b> / year</div>
+        <div class="was">about $0.40 per student</div>
+        <div class="for">Schoolwide license</div>
+        <ul>
+          <li>Full access to all games and courses</li>
+          <li>500 student accounts</li>
+          <li>5 teacher accounts</li>
+          <li>Integrated with Google Classroom, Clever, Classlink and more</li>
+          <li>Student email not required</li>
+          <li>Compliant with national and statewide privacy/security regulations</li>
+        </ul>
+        <input type="hidden" name="membershipTypeId" value="73">
+        <input type="hidden" name="operation" value="none">
+        <input type="hidden" name="numStudents" value="500">
+        <button class="purchase" type="submit">Purchase</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="po">
+    <div class="or">OR</div>
+    <a class="pobtn" href="https://trainer.thetamusic.com/en/purchaseOrderRequest/default/73/500">Pay by Purchase Order</a>
+    <p><a href="https://trainer.thetamusic.com/en/request-document">Request W-9 form or other documentation</a></p>
+    <p>Purchase orders, PayPal, and all major credit cards accepted.</p>
+    <div class="trustline"><span>Works on any device</span><span>Matches major method books</span><span>No prep required</span></div>
+  </div>
+</section>
+
+<!-- COURSE (mirrors /en/course/band-essentials-1) -->
+<section class="wrap" aria-labelledby="course-h">
+  <div class="divider">
+    <h2>What every plan unlocks</h2>
+    <p>The complete Band Essentials 1 course: 12 units, 6 games, 16 instruments</p>
+  </div>
+
+  <div class="coursebox">
+    <div class="ring" aria-hidden="true"><div><b>12</b><span>units</span></div></div>
+    <div>
+      <div class="ctitle">
+        <img src="https://trainer.thetamusic.com/sites/kichijoji.thetamusic.com/files/course_11596.png" alt="">
+        <h2 id="course-h">Band Essentials 1</h2>
+      </div>
+      <div class="skills">
+        <h3>Skills covered:</h3>
+        <ul>
+          <li>Read notes on the staff</li>
+          <li>Write notes on the staff</li>
+          <li>Identify note fingerings</li>
+          <li>Read basic rhythms</li>
+          <li>Terms &amp; symbols</li>
+          <li>Key signatures</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="note">Already have an account? <a href="https://trainer.thetamusic.com/en/user/login">login here</a>.<br>Want to look around first? <a href="https://trainer.thetamusic.com/en/course/band-essentials-1">try the course free</a>.</p>
+
+  <div class="instrow">
+    <div>
+      <label for="inst">Select an instrument:</label>
+      <div class="sel"><img id="instIcon" src="https://trainer.thetamusic.com/ssi/tachikawa/exercise/image/instruments/saxophone.png" alt=""><select id="inst"></select></div>
+    </div>
+    <a class="unlock" href="#plans" data-plan="studio">Unlock Full Course</a>
+  </div>
+
+  <div id="units"></div>
+
+  <div class="final">
+    <h2>Ready to start Unit 1?</h2>
+    <p>Pick a plan and every unit, game and instrument is unlocked right away.</p>
+    <a class="purchase" href="#plans" data-plan="studio">Choose a plan</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a href="https://trainer.thetamusic.com/en/content/theta-music-trainer-for-teachers">Teachers</a>
+  <a href="https://trainer.thetamusic.com/en/content/theta-music-trainer-faq">FAQ</a>
+  <a href="https://trainer.thetamusic.com/en/content/theta-music-trainer-terms-service">Terms of Service</a>
+  <a href="https://trainer.thetamusic.com/en/content/theta-music-trainer-privacy-policy">Privacy Policy</a>
+  <a href="https://trainer.thetamusic.com/en/contact">Contact Us</a>
+</footer>
+
+<div class="sbar" id="sbar" aria-hidden="true">
+  <div class="in">
+    <p><b>Unlock all 12 units</b> · Theta Studio $79/year for 30 students</p>
+    <a class="purchase" href="#plans" data-plan="studio" tabindex="-1">See plans</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var IMG='https://trainer.thetamusic.com/ssi/tachikawa/exercise/image/instruments/';
+  var GAME='https://trainer.thetamusic.com/sites/kichijoji.thetamusic.com/themes/mobileresponsive/images/';
+
+  // Instruments (same list as the course page)
+  var inst=[["Alto Saxophone","saxophone"],["Baritone / Euphonium B.C.","baritone"],["Baritone / Euphonium T.C.","euphonium"],["Bassoon","bassoon"],["Bells (xylophone)","bells"],["Clarinet","clarinet"],["Electric Bass","electricbass"],["Flute","flute"],["French Horn (Bb Single)","bbhorn"],["French Horn (Double)","dhorn"],["French Horn (F Single)","fhorn"],["Oboe","oboe"],["Tenor Saxophone","tenorsaxophone"],["Trombone","trombone"],["Trumpet","trumpet"],["Tuba","tuba"]];
+  var sel=document.getElementById('inst'),icon=document.getElementById('instIcon');
+  inst.forEach(function(i){var o=document.createElement('option');o.value=i[1];o.textContent=i[0];sel.appendChild(o);});
+  sel.addEventListener('change',function(){icon.src=IMG+sel.value+'.png';});
+
+  // Units (same content as the course page)
+  var G={rn:["Read Notes","game_98.png"],wn:["Write Notes","game_104.png"],fi:["Fingerings","game_105.png"],rr:["Read Rhythms","game_107.png"],ts:["Terms & Symbols","game_112.png"],ks:["Key Signatures","game_108.png"]};
+  var units=[
+    ["B, C, D","B4, C5, D5","wholes, halves, quarters 1"],
+    ["G, A","G4, A4","wholes, halves, quarters 2"],
+    ["E","E5","eighths 1"],
+    ["F#","F#4","eighths 2"],
+    ["Low E","E4","2/4: quarters and eighths"],
+    ["Low D","D4","3/4: halves, quarters, eighths"],
+    ["Low F, high F","F4, F5","tied notes",["G, C",1]],
+    ["High G","G5","3/4: tied notes",["G, C",2]],
+    ["C#","C#4","dotted halves",["G, C, D",1]],
+    ["High F#","F#5","2/4: tied notes and dotted quarters",["G, C, D",2]],
+    ["Bb","Bb4","3/4: tied notes and dotted quarters",["G, C, D, F",1]],
+    ["High A, Eb","A5, Eb5","tied notes and dotted quarters",["G, C, D, F",2]]
+  ];
+  var ks=0;
+  function lesson(code,title,g,level){
+    return '<div class="lesson"><h4>'+code+'.&nbsp; '+title+'</h4>'+
+      '<div class="row"><a class="ex" href="#plans"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>Exercise: '+G[g][0]+'</a></div>'+
+      '<div class="row"><a class="gm" href="#plans"><img loading="lazy" src="'+GAME+G[g][1]+'" alt=""><span><b>Game: '+G[g][0]+'</b><span>'+level+'</span></span></a></div></div>';
+  }
+  function rhythmTitle(r){var m=r.match(/^(\d\/4): (.*)$/);return m?'Read Rhythms in '+m[1]+' ('+m[2]+')':'Read Rhythms in 4/4 ('+r+')';}
+  var html='';
+  units.forEach(function(u,i){
+    var n=i+1,L='Level '+n,body='';
+    body+=lesson(n+'-1','Read '+u[0],'rn',L);
+    body+=lesson(n+'-2','Write '+u[0],'wn',L);
+    body+=lesson(n+'-3','Play '+u[0],'fi',L);
+    body+=lesson(n+'-4',rhythmTitle(u[2]),'rr',L);
+    body+=lesson(n+'-5','Terms &amp; Symbols '+n,'ts',L);
+    if(u[3]){ks++;body+=lesson(n+'-6','Key Signatures ('+u[3][0]+') '+u[3][1],'ks','Level '+ks);}
+    html+='<details class="unit"'+(n===1?' open':'')+'><summary>Unit '+n+':&nbsp;<span class="n">'+u[0]+'</span>&nbsp;<small>('+u[1]+')</small><span class="chev" aria-hidden="true">&#9656;</span></summary>'+
+      '<div class="lessons">'+body+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="studio">See plans &uarr;</a></p></div></details>';
+  });
+  var ca='';['rn','wn','fi','rr','ts','ks'].forEach(function(g,i){ca+='<div class="lesson"><h4>'+(i+1)+'.&nbsp; '+G[g][0]+'</h4><div class="row"><a class="gm" href="#plans"><img loading="lazy" src="'+GAME+G[g][1]+'" alt=""><span><b>Game: '+G[g][0]+'</b><span>Challenge Level</span></span></a></div></div>';});
+  html+='<details class="unit"><summary>Course Assessment:&nbsp;<span class="n">Challenge Levels</span><span class="chev" aria-hidden="true">&#9656;</span></summary><div class="lessons">'+ca+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="studio">See plans &uarr;</a></p></div></details>';
+  document.getElementById('units').innerHTML=html;
+
+  // Player monthly/yearly toggle (membershipTypeId 1 = $9/month, 71 = $39/year)
+  var btns=document.querySelectorAll('[data-bill]');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var y=b.dataset.bill==='year';
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    document.querySelector('[data-player-price]').textContent=y?'$39':'$9';
+    document.querySelector('[data-player-per]').textContent=y?'/ year':'/ month';
+    document.querySelector('[data-player-was]').textContent=y?'vs. $108 paying monthly':'or $39/year if billed yearly';
+    document.querySelector('[data-player-id]').value=y?'71':'1';
+  });});
+
+  // Highlight a plan when arriving with #player / #studio / #school, or from in-page links
+  function pick(id){document.querySelectorAll('.plan').forEach(function(p){p.classList.toggle('picked',p.id===id);});}
+  var h=location.hash.replace('#','');
+  if(/^(player|studio|school)$/.test(h)) pick(h);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-plan]');if(a)pick(a.dataset.plan);
+    var f=e.target.closest('.purchase,[data-plan]');
+    if(f)(window.dataLayer=window.dataLayer||[]).push({event:'be_pricing_click',plan:(f.closest('.plan')||{}).id||a&&a.dataset.plan||null});
+  });
+
+  // Sticky bar when plans are off-screen
+  if('IntersectionObserver' in window){
+    var bar=document.getElementById('sbar');
+    new IntersectionObserver(function(es){var s=!es[0].isIntersecting;bar.classList.toggle('show',s);bar.setAttribute('aria-hidden',s?'false':'true');bar.querySelector('a').tabIndex=s?0:-1;},{threshold:0}).observe(document.querySelector('.plans'));
+  }
+})();
+</script>
+</body>
+</html>
