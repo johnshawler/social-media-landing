@@ -139,7 +139,8 @@ h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.01em}
 .metric p{margin:3px 0 0;font-size:.88rem;color:var(--muted)}
 @media (max-width:520px){.metrics{grid-template-columns:1fr}}
 .dash-art{position:relative}
-.dash-art img{border-radius:22px;box-shadow:var(--shadow);width:100%}
+@media (min-width:861px){#tracking .split{grid-template-columns:1.35fr 1fr;gap:48px}}
+.dash-art img{border-radius:16px;box-shadow:var(--shadow);width:100%;height:auto;background:#fff;border:1px solid var(--line)}
 
 /* Testimonials */
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
@@ -319,7 +320,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <section class="section" id="tracking">
   <div class="wrap split">
     <div class="dash-art reveal">
-      <img loading="lazy" src="https://trainer.thetamusic.com/sites/kichijoji.thetamusic.com/files/images/band_instructor_1.png" alt="Band director reviewing student progress">
+      <img loading="lazy" src="media/progress-dashboard.png" width="1262" height="724" alt="Teacher dashboard for Band Essentials 1 showing each student's completion, accuracy, points and color-coded progress by unit">
     </div>
     <div class="reveal">
       <span class="eyebrow">For teachers</span>
