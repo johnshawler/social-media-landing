@@ -57,12 +57,11 @@ h1,h2,h3{color:var(--heading);margin:0;line-height:1.25}
 .purchase:hover{background:var(--gold-h)}
 .plan.best{border:3px solid var(--gold);box-shadow:0 10px 26px -12px rgba(204,153,0,.6)}
 .plan.best .bar{background:var(--gold)}
-.plan.best{overflow:visible}
-.plan.best .bar{border-radius:5px 5px 0 0}
+.plan.tagged{overflow:visible}
+.plan.tagged .bar{border-radius:5px 5px 0 0;padding-top:12px}
 .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--purple);color:#fff;font-size:11px;font-weight:bold;padding:3px 12px;border-radius:12px;z-index:1}
-.plan.best .bar{padding-top:12px}
 .plan.picked{outline:4px solid rgba(33,84,137,.35);outline-offset:3px}
-@media (max-width:820px){.plans{grid-template-columns:1fr;max-width:420px;margin-inline:auto}.plan.best{order:-1}}
+@media (max-width:820px){.plans{grid-template-columns:1fr;max-width:420px;margin-inline:auto}#school{order:-2}#studio{order:-1}}
 
 .po{max-width:640px;margin:26px auto 0;text-align:center}
 .or{display:flex;align-items:center;gap:12px;color:#888;font-weight:bold;margin-bottom:14px}
@@ -182,17 +181,17 @@ footer a{margin:0 8px;text-decoration:none}
       </div>
     </form>
 
-    <form class="plan best" id="studio" method="post" action="https://trainer.thetamusic.com/en/content/payment">
-      <span class="ribbon">Best for band directors</span>
+    <form class="plan tagged" id="studio" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+      <span class="ribbon">Best for private instructors</span>
       <div class="bar">Theta Studio</div>
       <div class="body">
         <div class="price"><b>$79</b> / year</div>
         <div class="was">about $2.63 per student</div>
         <div class="for">1 teacher, 30 students</div>
-        <div class="sub">One band or classroom</div>
+        <div class="sub">Your private lesson studio</div>
         <ul>
           <li>Full access to all games and courses</li>
-          <li>Assign Band Essentials to your class</li>
+          <li>Assign Band Essentials to your students</li>
           <li>Track accuracy, completion, speed &amp; growth</li>
         </ul>
         <input type="hidden" name="membershipTypeId" value="72">
@@ -202,7 +201,8 @@ footer a{margin:0 8px;text-decoration:none}
       </div>
     </form>
 
-    <form class="plan" id="school" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+    <form class="plan best tagged" id="school" method="post" action="https://trainer.thetamusic.com/en/content/payment">
+      <span class="ribbon">Best for band directors</span>
       <div class="bar">Theta School</div>
       <div class="body">
         <div class="price"><b>$199</b> / year</div>
@@ -267,7 +267,7 @@ footer a{margin:0 8px;text-decoration:none}
       <label for="inst">Select an instrument:</label>
       <div class="sel"><img id="instIcon" src="https://trainer.thetamusic.com/ssi/tachikawa/exercise/image/instruments/saxophone.png" alt=""><select id="inst"></select></div>
     </div>
-    <a class="unlock" href="#plans" data-plan="studio">Unlock Full Course</a>
+    <a class="unlock" href="#plans" data-plan="school">Unlock Full Course</a>
   </div>
 
   <div id="units"></div>
@@ -275,7 +275,7 @@ footer a{margin:0 8px;text-decoration:none}
   <div class="final">
     <h2>Ready to start Unit 1?</h2>
     <p>Pick a plan and every unit, game and instrument is unlocked right away.</p>
-    <a class="purchase" href="#plans" data-plan="studio">Choose a plan</a>
+    <a class="purchase" href="#plans" data-plan="school">Choose a plan</a>
   </div>
 </section>
 </main>
@@ -290,8 +290,8 @@ footer a{margin:0 8px;text-decoration:none}
 
 <div class="sbar" id="sbar" aria-hidden="true">
   <div class="in">
-    <p><b>Unlock all 12 units</b> · Theta Studio $79/year for 30 students</p>
-    <a class="purchase" href="#plans" data-plan="studio" tabindex="-1">See plans</a>
+    <p><b>Unlock all 12 units</b> · Theta School $199/year for 500 students</p>
+    <a class="purchase" href="#plans" data-plan="school" tabindex="-1">See plans</a>
   </div>
 </div>
 
@@ -339,10 +339,10 @@ footer a{margin:0 8px;text-decoration:none}
     body+=lesson(n+'-5','Terms &amp; Symbols '+n,'ts',L);
     if(u[3]){ks++;body+=lesson(n+'-6','Key Signatures ('+u[3][0]+') '+u[3][1],'ks','Level '+ks);}
     html+='<details class="unit"'+(n===1?' open':'')+'><summary>Unit '+n+':&nbsp;<span class="n">'+u[0]+'</span>&nbsp;<small>('+u[1]+')</small><span class="chev" aria-hidden="true">&#9656;</span></summary>'+
-      '<div class="lessons">'+body+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="studio">See plans &uarr;</a></p></div></details>';
+      '<div class="lessons">'+body+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="school">See plans &uarr;</a></p></div></details>';
   });
   var ca='';['rn','wn','fi','rr','ts','ks'].forEach(function(g,i){ca+='<div class="lesson"><h4>'+(i+1)+'.&nbsp; '+G[g][0]+'</h4><div class="row"><a class="gm" href="#plans"><img loading="lazy" src="'+GAME+G[g][1]+'" alt=""><span><b>Game: '+G[g][0]+'</b><span>Challenge Level</span></span></a></div></div>';});
-  html+='<details class="unit"><summary>Course Assessment:&nbsp;<span class="n">Challenge Levels</span><span class="chev" aria-hidden="true">&#9656;</span></summary><div class="lessons">'+ca+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="studio">See plans &uarr;</a></p></div></details>';
+  html+='<details class="unit"><summary>Course Assessment:&nbsp;<span class="n">Challenge Levels</span><span class="chev" aria-hidden="true">&#9656;</span></summary><div class="lessons">'+ca+'<p class="lockrow">Included in every plan · <a href="#plans" data-plan="school">See plans &uarr;</a></p></div></details>';
   document.getElementById('units').innerHTML=html;
 
   // Player monthly/yearly toggle (membershipTypeId 1 = $9/month, 71 = $39/year)
